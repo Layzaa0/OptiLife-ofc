@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0f2c;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 220px;
+  background: #0b0c25;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar span {
+  font-weight: normal;
+  font-size: 14px;
+  color: #888;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  color: #6c63ff;
+}
+
+.upgrade {
+  text-align: center;
+}
+
+.upgrade button {
+  padding: 8px 12px;
+  background: #6c63ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.dashboard {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+header {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type=\"text\"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1c1e3a;
+  color: white;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.initials {
+  background: #6c63ff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.balance, .expenses {
+  background: #1a1c3b;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.right {
+  background: #1a1c3b;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.credit-card {
+  background: linear-gradient(135deg, #6c63ff, #8a85ff);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.users {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2c2e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transactions .item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.transactions .amount {
+  color: #ff5252;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.blue {
+  background: #6c63ff;
+}
+
+.dot.light {
+  background: #88d1ff;
+}
+
+.dot.gray {
+  background: #aaa;
+}

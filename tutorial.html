@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutorial do Site</title>
+  <link rel="stylesheet" href="tutorial.css" />
+</head>
+<body>
+
+  <!-- Vídeo de fundo -->
+<video autoplay muted loop class="background-video">
+  <source src="pixverse2F_1745717507.mp4" type="video/mp4">
+</video>
+
+  <!-- Modal do Tutorial -->
+  <div id="tutorialModal" class="modal">
+    <div class="modal-content">
+      <h2 id="tutorial-title">Título do Tutorial</h2>
+      <p id="tutorial-description">Descrição da etapa atual...</p>
+      <div class="buttons">
+        <button id="prevBtn">← Anterior</button>
+        <button id="skipBtn">Pular Tutorial</button>
+        <button id="nextBtn">Próximo →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="tutorial.js"></script>
+</body>
+</html>

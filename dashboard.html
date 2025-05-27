@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Dashboard</title>
+  <link rel="stylesheet" href="graficos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+  
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Blanted.<br><span>Financial Management</span></h2>
+      <ul class="menu">
+        <li>Dashboard</li>
+        <li>Cards</li>
+        <li>Invest</li>
+        <li>Stats</li>
+        <li>Documents</li>
+        <li>Settings</li>
+        <li>Help</li>
+      </ul>
+      <div class="upgrade">
+        <p>Upgrade to Pro</p>
+        <button>Choose Plans</button>
+      </div>
+    </aside>
+    <main class="dashboard">
+      <header>
+        <input type="text" placeholder="Search something here...">
+        <div class="user">
+          <i class="bell">🔔</i>
+          <div class="initials">NP</div>
+        </div>
+      </header>
+      <section class="balance">
+        <h3>Total Balance</h3>
+        <h1>$24.194,00</h1>
+        <p>October's gain from investment <span class="gain">+$750,00</span></p>
+        <select>
+          <option>Monthly</option>
+        </select>
+        <canvas id="barChart"></canvas>
+      </section>
+      <section class="expenses">
+        <h3>October's Expense</h3>
+        <h2>$5.774,00</h2>
+        <canvas id="pieChart"></canvas>
+        <ul class="legend">
+          <li><span class="dot blue"></span> Monthly Subscriptions</li>
+          <li><span class="dot light"></span> Grocery</li>
+          <li><span class="dot gray"></span> Remaining Budget</li>
+        </ul>
+      </section>
+      <section class="right">
+        <div class="card">
+          <h3>My Cards</h3>
+          <div class="credit-card">MasterCard<br>3492 8384 8293 ****</div>
+        </div>
+        <div class="send-money">
+          <h4>Send Money</h4>
+          <div class="users">
+            <div class="circle">+</div>
+            <div class="circle">GA</div>
+            <div class="circle">SC</div>
+            <div class="circle">HW</div>
+            <div class="circle">GA</div>
+          </div>
+        </div>
+        <div class="transactions">
+          <h4>Transactions</h4>
+          <div class="item">Amazon <span class="time">3 hours ago</span> <span class="amount">-$824.50</span></div>
+          <div class="item">Spotify <span class="time"></span> <span class="amount">-$15.00</span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

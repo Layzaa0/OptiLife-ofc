@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>principal</title>
+  <link rel="stylesheet" href="principal.css">
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="2.png" alt="Logo OptiLife" />
+
+    </div>
+  
+    <nav class="nav-links">
+      <a href="principal.html">Início</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="relatorios.html">Relatórios e Histórico</a>
+      <a href="educacao.html">Educação e Sustentabilidade</a>
+      <a href="dicas.html">Dicas</a>
+      <a href="sobre.html">Sobre o site</a>
+    </nav>
+  
+    <div class="user-profile">
+      <img src="perfil.PNG" alt="Foto de Luiza" />
+      <span>Luiza</span>
+      <span class="dropdown-icon">▼</span>
+    </div>
+  </header>
+  
+
+  <section class="hero">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="pixverse2F_1745717507.mp4" type="video/mp4">
+    </video>
+
+
+
+
+
+    <div class="hero-content">
+      <h1>Transforme sua casa.<br>Otimize seu consumo.</h1>
+      <p>Tecnologia e sustentabilidade no seu dia a dia com a IA da OptiLife.</p>
+      <a href="#" class="btn">Saiba mais</a>
+    </div>
+  </section>
+
+<!-- Botão flutuante da Lumi -->
+<div id="lumi-button" onclick="toggleChat()">
+  <img src="perfil.PNG" alt="Lumi" />
+</div>
+
+<!-- Caixa de chat -->
+<div id="lumi-chat">
+  <div class="chat-header">
+    <span>Lumi</span>
+    <button onclick="toggleChat()">✖</button>
+  </div>
+  <div class="chat-body" id="mensagens">
+    <div class="mensagem lumi">Olá! Como posso te ajudar hoje?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="entrada" placeholder="Digite sua pergunta..." />
+    <button id="enviar">Enviar</button>
+  </div>
+</div>
+
+<style>
+  /* Botão flutuante */
+  #lumi-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  #lumi-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Janela de chat */
+  #lumi-chat {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 60px;
+    height: 820px;
+    width: 820px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+  }
+
+  .chat-header {
+    background: #053769;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .chat-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .chat-body {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+    background: #f9f9f9;
+  }
+
+  .chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .chat-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .chat-input button {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .mensagem {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 90%;
+    clear: both;
+  }
+
+  .usuario {
+    background: #d0ebff;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .lumi {
+    background: #e6e6e6;
+    align-self: flex-start;
+    margin-right: auto;
+    text-align: left;
+  }
+</style>
+
+<script>
+  function toggleChat() {
+    const chatBox = document.getElementById('lumi-chat');
+    chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+  }
+
+  document.getElementById("enviar").addEventListener("click", () => {
+    const entrada = document.getElementById("entrada");
+    const mensagens = document.getElementById("mensagens");
+
+    const texto = entrada.value.trim().toLowerCase();
+    if (texto === "") return;
+
+    // Mensagem do usuário
+    const bolhaUsuario = document.createElement("div");
+    bolhaUsuario.className = "mensagem usuario";
+    bolhaUsuario.textContent = texto;
+    mensagens.appendChild(bolhaUsuario);
+
+    entrada.value = "";
+
+    setTimeout(() => {
+      const bolhaLumi = document.createElement("div");
+      bolhaLumi.className = "mensagem lumi";
+      let respostaLumi = "";
+
+      if (texto.includes("economizar energia em casa")) {
+        respostaLumi = "Para economizar energia em casa, você pode começar desligando as luzes ao sair de um cômodo, usar lâmpadas LED, evitar deixar aparelhos em stand-by e usar a máquina de lavar e a lava-louças com carga total.";
+      } else if (texto.includes("economizar água no banheiro")) {
+        respostaLumi = "No banheiro, você pode economizar água fechando a torneira ao escovar os dentes e ao se ensaboar, tomar banhos mais curtos e verificar se há vazamentos.";
+      } else if (texto.includes("importância de economizar água")) {
+        respostaLumi = "Economizar água é crucial para preservar os recursos naturais, garantir o abastecimento para as futuras gerações e reduzir os custos em sua conta.";
+      } else if (texto.includes("energias renováveis")) {
+        respostaLumi = "Energias renováveis são fontes de energia que se regeneram naturalmente, como a solar, eólica, hidrelétrica e biomassa, sendo importantes para reduzir a emissão de gases de efeito estufa.";
+      } else if (texto.includes("consumo de energia do chuveiro")) {
+        respostaLumi = "Para reduzir o consumo de energia do chuveiro, procure tomar banhos mais rápidos e, se possível, utilize a chave na posição 'verão', que geralmente consome menos energia.";
+      } else if (texto.includes("reutilizar a água da chuva")) {
+        respostaLumi = "Você pode reutilizar a água da chuva para regar plantas, lavar o carro e limpar áreas externas. Existem sistemas simples de captação que podem ser instalados em casa.";
+      } else if (texto.includes("economizar água na cozinha")) {
+        respostaLumi = "Na cozinha, evite lavar a louça com a torneira aberta continuamente, utilize a lava-louças com carga total e aproveite a água do cozimento de legumes para regar as plantas depois de fria.";
+      } else if (texto.includes("impacto do desperdício de energia")) {
+        respostaLumi = "O desperdício de energia contribui para o aumento da demanda por fontes não renováveis, a emissão de poluentes e o aquecimento global, além de aumentar os gastos com eletricidade.";
+      } else if (texto.includes("dinheiro")) {
+        respostaLumi = "Infelizmente não posso fazer nada em relação a isso. :(";
+      } else {
+        respostaLumi = "Olá! Como posso ajudar você a economizar energia ou água?";
+      }
+
+      bolhaLumi.textContent = respostaLumi;
+      mensagens.appendChild(bolhaLumi);
+      mensagens.scrollTop = mensagens.scrollHeight;
+    }, 500);
+  });
+</script>
+
+  
+  
+  <div class="card">
+    <div class="loader">
+      <p>Transformando</p>
+      <div class="words">
+        <span class="word">consumo</span>
+        <span class="word">eficiência</span>
+        <span class="word">energia</span>
+        <span class="word">sustentabilidade</span>
+        <span class="word">consumo</span>
+      </div>
+    </div>
+  </div>
+
+<div class="menu.p">
+
+    <p>
+      Nossa solução combina tecnologia inteligente com dados históricos e sensores para ajudar você a economizar. 
+      Entendendo energia, reduzindo o uso e tomando decisões baseadas em sustentabilidade e economia. Pequenas escolhas geram grandes impactos.
+    </p>
+  </section>
+</div>
+  <div class="container">
+    
+  </div>
+  
+
+  <section class="inteligencia">
+    <div class="content">
+      <img src="2.png" alt="Logo OptiLife" class="logo-img"> <!-- Substitua pela sua logo -->
+      <div>
+        <h3>Otimize seu consumo com inteligência</h3>
+        <p>
+          A IA da OptiLife coleta e interpreta seus dados de consumo em tempo real, oferecendo insights e dicas personalizadas para reduzir seus gastos e proteger o planeta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+          <p>© 2025 OptiLife Economy. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

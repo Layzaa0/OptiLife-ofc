@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+}
+
+/* Estilo base do header */
+.header {
+  background-color: #0f2855;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 70px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Aumentar a logo sem alterar o header */
+.logo img {
+  height: 90px;
+  margin-top: -20px; /* Faz a logo "sair" do header */
+}
+
+/* Estilo da navbar */
+.navbar {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Usuária */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  color: white;
+  font-weight: bold;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 100px; /* aumente para o tamanho desejado */
+}
+
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.perfil img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 90%;
+  margin: 2rem auto;
+  background-color: #b5c5e0;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  min-height: 400px;
+}
+
+h2 {
+  text-align: center;
+  color: #112d5c;
+}
+
+.subtexto {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #112d5c;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.chat {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mensagem {
+  padding: 0.6rem 1rem;
+  border-radius: 15px;
+  max-width: 70%;
+}
+
+.usuario {
+  background-color: #ffffff;
+  align-self: flex-end;
+  color: #333;
+}
+
+.lumi {
+  background-color: #d9e6f2;
+  align-self: flex-start;
+  color: #112d5c;
+}
+
+.input-area {
+  width: 550px;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza horizontalmente na tela */
+  margin-top: 210px;
+  border-radius: 20px;
+  gap: 15px; /* separa visualmente o input do botão */
+}
+
+/* Estilo do input */
+.input {
+
+  width: 550px;
+  height: 30px;
+  outline: none;
+  background-color: #F3F3F3;
+  border-radius: 20px;
+  transition: all 0.5s;
+  font-size: 18px;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0 0 0 7px rgba(74, 157, 236, 0.2); /* SOMENTE no input */
+}
+
+/* Botão ao lado do input */
+#enviar {
+  height: 50px;
+  padding: 0 20px;
+  margin-left: 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+#entrada {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+#enviar {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: #112d5c;
+}
+
+.avatar-lumi {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+}
